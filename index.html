@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Facial-Impression Judgments of MLLMs Predict Election Outcomes</title>
+<meta name="description" content="Project page for 'Facial-Impression Judgments of Multimodal Large Language Models Predict Election Outcomes' (SocialAgent @ NeurIPS 2026).">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1b1f24; --muted:#5b6470; --line:#e6e8ec;
+    --card:#f7f8fa; --accent:#2b4ea8; --accent-ink:#ffffff;
+    --maxw:760px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0f1216; --fg:#e8eaed; --muted:#9aa4b2; --line:#232832;
+      --card:#161a20; --accent:#6f93e8; --accent-ink:#0f1216;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f1216; --fg:#e8eaed; --muted:#9aa4b2; --line:#232832;
+    --card:#161a20; --accent:#6f93e8; --accent-ink:#0f1216;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:56px 16px 72px}
+  header{border-bottom:1px solid var(--line); padding-bottom:28px; margin-bottom:28px}
+  h1{
+    font-size:clamp(1.5rem,4.2vw,2.15rem); line-height:1.2; margin:0 0 .6rem;
+    font-weight:700; letter-spacing:-.01em;
+  }
+  .authors{font-size:1.02rem; margin:.2rem 0 .1rem}
+  .authors a{color:var(--fg); text-decoration:none; border-bottom:1px solid var(--line)}
+  .authors a:hover{border-color:var(--accent)}
+  .affil,.venue{color:var(--muted); font-size:.95rem; margin:.25rem 0 0}
+  .venue{margin-top:.6rem}
+  .venue strong{color:var(--fg); font-weight:600}
+  .btns{display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 2px}
+  .btn{
+    display:inline-flex; align-items:center; gap:.5em;
+    padding:.56em 1em; border-radius:9px; text-decoration:none; font-weight:600; font-size:.95rem;
+    background:var(--accent); color:var(--accent-ink); border:1px solid transparent;
+  }
+  .btn.alt{background:transparent; color:var(--fg); border-color:var(--line)}
+  .btn.alt:hover{border-color:var(--accent)}
+  .btn:hover{opacity:.92}
+  figure{margin:34px 0 8px}
+  figure img{width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:10px; background:#fff}
+  figcaption{color:var(--muted); font-size:.88rem; margin-top:.6rem}
+  h2{font-size:1.2rem; margin:38px 0 .5rem; letter-spacing:-.01em}
+  .abstract p{margin:.4rem 0 0; text-align:justify}
+  pre{
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:14px 16px; overflow:auto; font-size:.86rem; line-height:1.5;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  .copy{
+    float:right; margin:-4px 0 6px; font-size:.8rem; cursor:pointer;
+    background:transparent; color:var(--muted); border:1px solid var(--line);
+    border-radius:7px; padding:.25em .6em;
+  }
+  .copy:hover{border-color:var(--accent); color:var(--fg)}
+  footer{margin-top:48px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Facial-Impression Judgments of Multimodal Large Language Models Predict Election Outcomes</h1>
+    <p class="authors">
+      Sirisa Cox<sup>1</sup> &nbsp;·&nbsp;
+      James J. DiCarlo<sup>2</sup> &nbsp;·&nbsp;
+      Gwangsu Kim<sup>2</sup>
+    </p>
+    <p class="affil"><sup>1</sup>Commonwealth School &nbsp;&nbsp; <sup>2</sup>Massachusetts Institute of Technology</p>
+    <p class="venue"><strong>SocialAgent: 2nd Workshop on LLMs for Social Reasoning and Simulation</strong>, NeurIPS 2026 &nbsp;·&nbsp; Atlanta &nbsp;·&nbsp; Dec 13, 2026</p>
+
+    <div class="btns">
+      <a class="btn" href="paper.pdf">Paper (PDF)</a>
+      <a class="btn alt" href="poster.pdf">Poster (PDF)</a>
+      <a class="btn alt" href="#cite">BibTeX</a>
+    </div>
+  </header>
+
+  <figure>
+    <img src="assets/teaser.png" alt="Forest plot: each of 15 MLLMs predicts U.S. election winners from candidate face images above chance, clustered around the human benchmark.">
+    <figcaption><strong>Figure 1.</strong> Across 15 MLLMs, zero-shot competence judgments from candidate face
+      images predict real U.S. gubernatorial and Senate winners above chance, clustered near the aggregate
+      human benchmark (69%).</figcaption>
+  </figure>
+
+  <section class="abstract">
+    <h2>Abstract</h2>
+    <p>Humans rapidly infer social traits of others from their faces, and these superficial judgments can
+      predict consequential behavioral outcomes, including electoral choices. Given growing evidence that
+      multimodal large language models (MLLMs) reproduce human-like facial impression judgments, we asked
+      whether MLLMs' facial-impression judgments similarly predict real election outcomes. We presented MLLMs
+      with paired facial photographs of the winner and runner-up in U.S. gubernatorial and Senate races held
+      between 1995 and 2008 and asked which candidate appeared more competent. The models' competence judgments
+      predicted the election outcomes with 62% median accuracy, which rose to 60&ndash;76% across models when
+      limited to races where the models exhibited consistent preference (aggregate human competence judgments
+      predict with 69% accuracy across all 234 races with available human ratings, and 70% median accuracy when
+      filtered for consistent preference). This predictive ability was consistently observed across 15 models
+      spanning a wide range of general multimodal reasoning capabilities, as measured by the MMMU-Pro benchmark.
+      There was no detectable relationship between election-prediction accuracy and general multimodal reasoning
+      capability. Interestingly, when the same models were instead asked whom they would vote for or recommend
+      voting for, their responses predicted election outcomes less accurately than their competence judgments.
+      These results suggest that general-purpose MLLMs exhibit human-like facial biases that may appear innocuous
+      yet are associated with consequential human behavior.</p>
+  </section>
+
+  <section>
+    <h2>Poster</h2>
+    <a href="poster.pdf" aria-label="Open the full poster PDF">
+      <img src="assets/poster.png" alt="Conference poster summarizing the paper: MLLM competence judgments from candidate faces predict U.S. election winners above chance and more accurately than the models' own vote choices."
+           style="width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:10px; background:#fff">
+    </a>
+    <p style="color:var(--muted); font-size:.88rem; margin-top:.6rem">
+      <a href="poster.pdf">Open the full-resolution poster (PDF)</a> &middot; SocialAgent @ NeurIPS 2026.
+    </p>
+  </section>
+
+  <section id="cite">
+    <h2>Citation</h2>
+    <button class="copy" onclick="(function(b){navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('bib').textContent).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)})})(this)">Copy</button>
+    <pre id="bib">@inproceedings{cox2026facial,
+  title     = {Facial-Impression Judgments of Multimodal Large Language
+               Models Predict Election Outcomes},
+  author    = {Cox, Sirisa and DiCarlo, James J. and Kim, Gwangsu},
+  booktitle = {SocialAgent: Second Workshop on Large Language Models for
+               Social Reasoning and Simulation, NeurIPS},
+  year      = {2026}
+}</pre>
+  </section>
+
+  <footer>
+    Face photographs, election outcomes, and human competence ratings are from the
+    <a href="https://tlab.uchicago.edu/db-redirect-politicians-faces/">Todorov-lab candidate-face database</a>.
+    &nbsp;·&nbsp; Contact: <a href="mailto:scox@commschool.org">scox@commschool.org</a>
+  </footer>
+</div>
+</body>
+</html>
